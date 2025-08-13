@@ -4,58 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proletec TI - Soluções em Tecnologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --branco: #ffffff;
+            --laranja: #ff7f00;
+            --laranja-escuro: #cc6600;
+            --preto: #222222;
+            --cinza-claro: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--cinza-claro);
+            color: var(--preto);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: var(--laranja);
+            font-size: 2.5rem;
             text-align: center;
         }
-        header {
-            background-color: #0052cc;
-            color: white;
-            padding: 20px;
+
+        header p {
+            text-align: center;
+            color: var(--preto);
+            font-size: 1.1rem;
+            margin-top: 5px;
         }
-        h1 {
-            margin: 0;
+
+        /* Seções */
+        section {
+            padding: 80px 0;
         }
-        main {
-            padding: 40px;
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
         }
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 10px;
-            font-size: 14px;
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--laranja);
+            margin: 10px auto 0;
         }
-        .button {
+
+        /* Cards de Serviço */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            color: var(--laranja);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        /* Seção Sobre */
+        .about-us {
+            background-color: var(--branco);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Mapa e Contato */
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .contact-info a {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #0052cc;
-            color: white;
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 12px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin: 10px;
         }
-        .button:hover {
-            background-color: #003d99;
+
+        .contact-info a:hover {
+            background-color: var(--laranja-escuro);
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: var(--preto);
+            color: var(--cinza-claro);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image {
+                margin-top: 30px;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Proletec TI</h1>
-        <p>Soluções em infraestrutura, manutenção e suporte para empresas</p>
+        <div class="container">
+            <h1>Proletec TI</h1>
+            <p>Soluções em infraestrutura, manutenção e suporte para empresas</p>
+        </div>
     </header>
+
     <main>
-        <h2>Bem-vindo!</h2>
-        <p>Atendemos 100% in loco, de forma preventiva e sob demanda.</p>
-        <p>Entre em contato para um diagnóstico gratuito.</p>
-        <a href="mailto:contato@seudominio.com.br" class="button">Fale Conosco</a>
-    </main>
-    <footer>
-        &copy; 2025 Proletec TI - Todos os direitos reservados
-    </footer>
-</body>
-</html>
+        <section class="services">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Suporte e Manutenção</h3>
+                        <p>Atendimento 100% in loco, com suporte preventivo e sob demanda para sua empresa.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Consultoria em TI</h3>
+                        <p>Análise completa da sua infraestrutura, buscando soluções eficientes e otimização de custos.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Segurança da Informação</h3>
+                        <p>Implementação de rotinas de backup, firewalls e estratégias para proteger seus dados contra ameaças.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2>Sobre a Proletec TI</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Somos a Proletec TI, uma empresa dedicada a fornecer soluções tecnológicas personalizadas para o seu negócio. Nossa missão é garantir que a sua infraestrutura de TI funcione de forma contínua e segura, permitindo que você foque no que realmente importa: o crescimento da sua empresa.</p>
+                        <p>Com anos de experiência no
