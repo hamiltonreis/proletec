@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendar.css">
 </head>
 <body>
-
     <header>
         <div class="container">
             <h1>Proletec TI</h1>
@@ -59,8 +59,9 @@
                 <h2>Área de Atuação e Contato</h2>
                 <div id="map"></div>
                 <div class="contact-info">
-                    <a href="mailto:proletec.ti@gmail.com">Fale Conosco por Email</a>
-                    <a href="https://share.google/OrtuuY1YECYMfr1Zw" target="_blank">Veja no Google</a>
+                    <a href="mailto:proletec.ti@gmail.com" class="button">Fale Conosco por Email</a>
+                    <a href="https://share.google/OrtuuY1YECYMfr1Zw" target="_blank" class="button">Veja no Google</a>
+                    <a href="#" id="scheduleButton" class="button">Agendar Atendimento</a>
                 </div>
             </div>
         </section>
@@ -72,7 +73,25 @@
         </div>
     </footer>
 
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Agendar Atendimento</h3>
+            <div id="calendar-container"></div>
+            <div id="scheduleForm" style="display:none;">
+                <p>Você escolheu o horário: <span id="selectedDateTime"></span></p>
+                <form id="appointmentForm">
+                    <input type="text" id="document" placeholder="CPF ou CNPJ" required>
+                    <input type="text" id="address" placeholder="Endereço do Atendimento" required>
+                    <textarea id="notes" placeholder="Observações"></textarea>
+                    <button type="submit" class="button">Confirmar Agendamento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DE_API_AQUI&callback=initMap"></script>
+    <script src="calendar.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5CalzRk9DDyXboDZmHj9g_BP0LWrN4DE&callback=initMap"></script>
 </body>
 </html>
